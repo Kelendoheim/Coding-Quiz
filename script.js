@@ -4,6 +4,7 @@ var answerOneEl = document.getElementById("btn1");
 var answerTwoEl = document.getElementById("btn2");
 var answerThreeEl = document.getElementById("btn3");
 var answerFourEl = document.getElementById("btn4");
+var pageIndex = 1;
 var quizPageArray = [
     {
         "set": "1",
@@ -47,12 +48,6 @@ var quizPageArray = [
     }
 ];
 
-
-
-
-
-
-
 document.getElementById("startButton").addEventListener("click", function(){
     setInterval(countDown, 1000);
     function countDown() {
@@ -64,6 +59,10 @@ document.getElementById("startButton").addEventListener("click", function(){
     }
     startQuiz();
 });
+
+document.getElementById("btn1").addEventListener("click", nextPage);
+
+
 
 function startQuiz(){
     document.getElementById("startButton").remove();
@@ -78,4 +77,12 @@ function startQuiz(){
     answerThreeEl.textContent = quizPageArray[0].answer3;
     answerFourEl.textContent = quizPageArray[0].answer4;
 };
+function nextPage(){
+    questionEL.textContent = quizPageArray[pageIndex].question;
+    answerOneEl.textContent = quizPageArray[pageIndex].answer1;
+    answerTwoEl.textContent = quizPageArray[pageIndex].answer2;
+    answerThreeEl.textContent = quizPageArray[pageIndex].answer3;
+    answerFourEl.textContent = quizPageArray[pageIndex].answer4;
+    pageIndex++;
 
+};
