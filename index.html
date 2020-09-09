@@ -10,20 +10,20 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="./style.css">
 
     </head>
     <body>
         <div>
-            <div>
-                <div id="highscoreLink" style="float:left;">
+            <header>
+                <nav id="highscoreLink" style="float:left;">
                     View Highscores
-                </div>
+                </nav>
                 <div id="timer" style="float:right;">
                     Timer: 60
                 </div>
 
-            </div>
+            </header>
 
         </div>
         <br>
@@ -32,20 +32,23 @@
         <h3 style="text-align: center;">Hello! Get ready to be tested!</h3>
         <div style="text-align: center;">
             <div>
-            <button id="btn1" class="btn; btn-sm" style="background-color: #9933CC; color: white; vertical-align: center;">1qwert</button>
+            <button id="startButton" class="btn; btn-sm" style="background-color: #9933CC; color: white; vertical-align: center;">1qwert</button>
             </div>
             <div>
-            <button id="btn2" class="btn; btn-sm" style="background-color: #9933CC; color: white; vertical-align: center;">2qwert</button>
+            <button id="btn1" class="btn; btn-sm" style="background-color: #9933CC; color: white; vertical-align: center; visibility:hidden;">2qwert</button>
             </div>
             <div>
-            <button id="btn3" class="btn; btn-sm" style="background-color: #9933CC; color: white; vertical-align: center;">3qwert</button>
+            <button id="btn2" class="btn; btn-sm" style="background-color: #9933CC; color: white; vertical-align: center; visibility:hidden;">3qwert</button>
             </div>
             <div>
-            <button id="btn4" class="btn; btn-sm" style="background-color: #9933CC; color: white; vertical-align: center;">4qwert</button>
+            <button id="btn3" class="btn; btn-sm" style="background-color: #9933CC; color: white; vertical-align: center; visibility:hidden;">4qwert</button>
+            </div>
+            <div>
+            <button id="btn4" class="btn; btn-sm" style="background-color: #9933CC; color: white; vertical-align: center; visibility:hidden;">4qwert</button>
             </div>
         </div>
         <br>
-        <footer style="text-align:center;">Were you right or wrong?</footer>
+        <footer id="rightWrong" style="text-align:center; visibility: hidden;">Were you right or wrong?</footer>
         
         <script src="./script.js"></script>
     </body>
