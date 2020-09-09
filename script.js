@@ -77,7 +77,5 @@ function startQuiz(){
     answerTwoEl.textContent = quizPageArray[0].answer2;
     answerThreeEl.textContent = quizPageArray[0].answer3;
     answerFourEl.textContent = quizPageArray[0].answer4;
-
-
 };
 
