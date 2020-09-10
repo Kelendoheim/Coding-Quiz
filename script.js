@@ -64,11 +64,13 @@ for(i = 0; i < answerButtonsEl.length; i++){
     answerButtonsEl[i].addEventListener("click", nextPage);
 }
 
+
+
 function countDown() {
     startingTime--;
     document.getElementById("timer").innerHTML = "Timer: " + startingTime;
     if(startingTime <= 0){
-        alert("GAME OVER");
+        location.assign("scores.html");
     }
 }
 
@@ -104,7 +106,7 @@ function nextPage(event){
     pageIndex++;
     }
     else {
-        console.log("gotohighscores");
+        location.assign("scores.html");
     }
 
 };
