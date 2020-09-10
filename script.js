@@ -5,6 +5,7 @@ var answerTwoEl = document.getElementById("btn2");
 var answerThreeEl = document.getElementById("btn3");
 var answerFourEl = document.getElementById("btn4");
 var pageIndex = 1;
+var answerButtonsEl = document.getElementsByClassName("answerButton");
 var quizPageArray = [
     {
         "set": "1",
@@ -12,7 +13,8 @@ var quizPageArray = [
         "answer1": "1. strings",
         "answer2": "2. booleans",
         "answer3": "3. alerts",
-        "answer4": "4. numbers"
+        "answer4": "4. numbers",
+        "correct": "3. alerts"
     },
     {
         "set": "2",
@@ -20,7 +22,8 @@ var quizPageArray = [
         "answer1": "1. quotes",
         "answer2": "2. curly brackets",
         "answer3": "3. parentheses",
-        "answer4": "4. square brackets"
+        "answer4": "4. square brackets",
+        "correct": "2. curly brackets"
     },
     {
         "set": "3",
@@ -28,7 +31,8 @@ var quizPageArray = [
         "answer1": "1. numbers and strings",
         "answer2": "2. other arrays",
         "answer3": "3. booleans",
-        "answer4": "4. all of the above"
+        "answer4": "4. all of the above",
+        "correct": "4. all of the above"
     },
     {
         "set": "4",
@@ -36,7 +40,8 @@ var quizPageArray = [
         "answer1": "1. commas",
         "answer2": "2. curly brackets",
         "answer3": "3. quotes",
-        "answer4": "4. parentheses"
+        "answer4": "4. parentheses",
+        "correct": "3. quotes"
     },
     {
         "set": "5",
@@ -44,23 +49,28 @@ var quizPageArray = [
         "answer1": "1. JavaScript",
         "answer2": "2. terminal/bash",
         "answer3": "3. for loops",
-        "answer4": "4. console log"
+        "answer4": "4. console log",
+        "correct": "4. console log"
     }
 ];
 
 document.getElementById("startButton").addEventListener("click", function(){
     setInterval(countDown, 1000);
-    function countDown() {
-        startingTime--;
-        document.getElementById("timer").innerHTML = "Timer: " + startingTime;
-        if(startingTime === 0){
-            alert("GAME OVER");
-        }
-    }
+    
     startQuiz();
 });
 
-document.getElementById("btn1").addEventListener("click", nextPage);
+for(i = 0; i < answerButtonsEl.length; i++){
+    answerButtonsEl[i].addEventListener("click", nextPage);
+}
+
+function countDown() {
+    startingTime--;
+    document.getElementById("timer").innerHTML = "Timer: " + startingTime;
+    if(startingTime <= 0){
+        alert("GAME OVER");
+    }
+}
 
 
 
@@ -77,12 +87,24 @@ function startQuiz(){
     answerThreeEl.textContent = quizPageArray[0].answer3;
     answerFourEl.textContent = quizPageArray[0].answer4;
 };
-function nextPage(){
+function nextPage(event){
+    console.log(event.target.textContent);
+    console.log(quizPageArray[pageIndex - 1].correct)
+
+    if(quizPageArray[pageIndex - 1].correct !== event.target.textContent){
+        startingTime -= 10;
+    }
+
+    if(pageIndex < 5){
     questionEL.textContent = quizPageArray[pageIndex].question;
     answerOneEl.textContent = quizPageArray[pageIndex].answer1;
     answerTwoEl.textContent = quizPageArray[pageIndex].answer2;
     answerThreeEl.textContent = quizPageArray[pageIndex].answer3;
     answerFourEl.textContent = quizPageArray[pageIndex].answer4;
     pageIndex++;
+    }
+    else {
+        console.log("gotohighscores");
+    }
 
 };
