@@ -13,9 +13,29 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <h1>Congratulations!</h1>
-        <h5 id="scoreDisplay"></h5>
+        <h1 style="text-align: center">Congratulations!</h1>
+        <p id="scoreDisplay" style="text-align: center"></p>
+        <form class="form-group" id="userId">
+            <label for="exampleInputPassword1">Please enter initials:</label>
+            <input class="form-control" id="inputInfo" style="width:auto; text-align: center;" placeholder="Save your success">
+            <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
+        </form>
+        <ul id="scores">
+
+        </ul>
         
-        <script src="./script.js"></script>
+        <script>
+            var userInput = document.getElementById("inputInfo");
+            document.getElementById("scoreDisplay").innerHTML = "Your final score is " + window.localStorage.getItem('finalScore') + " points!";
+            document.getElementById("userId").addEventListener("submit", function(event){
+                event.preventDefault();
+                console.log(userInput.value);
+                window.localStorage.setItem('user-id', userInput.value);
+                document.getElementById("scores").textContent = window.localStorage.getItem("user-id") + " : " + window.localStorage.getItem("finalScore");
+            });
+            
+
+
+        </script>
     </body>
 </html>
