@@ -2,56 +2,121 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Coding Quiz</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="./style.css">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Coding Quiz</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <header>
+        <a id="highscoreLink" style="float: left" href="./scores.html">
+          View Highscores
+        </a>
+        <div id="timer" style="float: right">Timer: 60</div>
+      </header>
+    </div>
+    <br />
+    <br />
+    <br />
+    <h3 id="questionText" style="text-align: center">Coding Quiz Challenge</h3>
+    <br />
+    <p
+      id="instructions"
+      style="text-align: center; margin-left: 300px; margin-right: 300px"
+    >
+      Try to answer the following code-related questions within the time limit.
+      Keep in mind that incorrect answers will penalize your remaining time by
+      10 seconds and thus your score by 10 points.
+    </p>
+    <div style="text-align: center">
+      <div>
+        <button
+          id="startButton"
+          class="btn btn-sm"
+          style="
+            background-color: #9933cc;
+            color: white;
+            vertical-align: center;
+          "
+        >
+          Start Quiz
+        </button>
+      </div>
+      <div>
+        <button
+          id="btn1"
+          class="btn btn-sm answerButton"
+          style="
+            background-color: #9933cc;
+            color: white;
+            vertical-align: center;
+            visibility: hidden;
+          "
+        >
+          answer1
+        </button>
+      </div>
+      <div>
+        <button
+          id="btn2"
+          class="btn btn-sm answerButton"
+          style="
+            background-color: #9933cc;
+            color: white;
+            vertical-align: center;
+            visibility: hidden;
+          "
+        >
+          answer2
+        </button>
+      </div>
+      <div>
+        <button
+          id="btn3"
+          class="btn btn-sm answerButton"
+          style="
+            background-color: #9933cc;
+            color: white;
+            vertical-align: center;
+            visibility: hidden;
+          "
+        >
+          answer3
+        </button>
+      </div>
+      <div>
+        <button
+          id="btn4"
+          class="btn btn-sm answerButton"
+          style="
+            background-color: #9933cc;
+            color: white;
+            vertical-align: center;
+            visibility: hidden;
+          "
+        >
+          answer4
+        </button>
+      </div>
+    </div>
+    <br />
+    <footer id="rightWrong" style="text-align: center; visibility: hidden">
+      Were you right or wrong?
+    </footer>
 
-    </head>
-    <body>
-        <div>
-            <header>
-                <a id="highscoreLink" style="float:left;" href="./scores.html">
-                    View Highscores
-                </a>
-                <div id="timer" style="float:right;">
-                    Timer: 60
-                </div>
-
-            </header>
-
-        </div>
-        <br>
-        <br>
-        <br>
-        <h3 id="questionText" style="text-align: center;">Coding Quiz Challenge</h3>
-        <br>
-        <p id="instructions" style="text-align:center; margin-left: 300px; margin-right: 300px;">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your remaining time by 10 seconds and thus your score by 10 points.</p>
-        <div style="text-align: center;">
-            <div>
-            <button id="startButton" class="btn btn-sm" style="background-color: #9933CC; color: white; vertical-align: center;">Start Quiz</button>
-            </div>
-            <div>
-            <button id="btn1" class="btn btn-sm answerButton" style="background-color: #9933CC; color: white; vertical-align: center; visibility:hidden;">answer1</button>
-            </div>
-            <div>
-            <button id="btn2" class="btn btn-sm answerButton" style="background-color: #9933CC; color: white; vertical-align: center; visibility:hidden;">answer2</button>
-            </div>
-            <div>
-            <button id="btn3" class="btn btn-sm answerButton" style="background-color: #9933CC; color: white; vertical-align: center; visibility:hidden;">answer3</button>
-            </div>
-            <div>
-            <button id="btn4" class="btn btn-sm answerButton" style="background-color: #9933CC; color: white; vertical-align: center; visibility:hidden;">answer4</button>
-            </div>
-        </div>
-        <br>
-        <footer id="rightWrong" style="text-align:center; visibility: hidden;">Were you right or wrong?</footer>
-        
-        <script src="./script.js"></script>
-    </body>
+    <script src="./script.js"></script>
+  </body>
 </html>
