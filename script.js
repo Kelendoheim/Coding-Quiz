@@ -1,3 +1,4 @@
+// Global variables are stored here so they may be manipulated appropriately
 var startingTime = 60;
 var questionEL = document.getElementById("questionText");
 var answerOneEl = document.getElementById("btn1");
@@ -8,6 +9,7 @@ var pageIndex = 1;
 var answerButtonsEl = document.getElementsByClassName("answerButton");
 var playerName = "";
 var finalScore = 0;
+// The following array of objects is what will populate the DOM and display each question. The correct value is also here so that it can be compared with user input.
 var quizPageArray = [
   {
     set: "1",
@@ -57,17 +59,17 @@ var quizPageArray = [
     correct: "4. console log",
   },
 ];
-
+// Below is the event listener to start the quiz function
 document.getElementById("startButton").addEventListener("click", function () {
   setInterval(countDown, 1000);
 
   startQuiz();
 });
-
+// This for loop will iterate through each button to make sure each one will trigger the nextpage function.
 for (i = 0; i < answerButtonsEl.length; i++) {
   answerButtonsEl[i].addEventListener("click", nextPage);
 }
-
+// The following function is the countdown timer for the quiz and will redirect the user to the ScriptProcessorNode.html page if time reaches 00. It will also store the score of 0 locally.
 function countDown() {
   startingTime--;
   document.getElementById("timer").innerHTML = "Timer: " + startingTime;
@@ -76,7 +78,7 @@ function countDown() {
     location.assign("scores.html");
   }
 }
-
+// This function will start the quix. It will remove the start button and the instructions for the quiz while populating the page with the question and corresponding answer buttons.
 function startQuiz() {
   document.getElementById("startButton").remove();
   document.getElementById("instructions").remove();
@@ -90,6 +92,7 @@ function startQuiz() {
   answerThreeEl.textContent = quizPageArray[0].answer3;
   answerFourEl.textContent = quizPageArray[0].answer4;
 }
+// the following function will iterate through all future questions and answers as well as decrement the timer if answered incorrectly by user. it will also locally store the final score.
 function nextPage(event) {
 
   if (quizPageArray[pageIndex - 1].correct !== event.target.textContent) {

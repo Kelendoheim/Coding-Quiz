@@ -17,20 +17,24 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
+    <!-- all styling is currently inline and bootstrap defaults. while not being great practice, this must be admitted here so it can be altered later. An empty style sheet remains so styling can be externalized -->
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div>
       <header>
+          <!-- Here we have the highscore link. -->
         <a id="highscoreLink" style="float: left" href="./scores.html">
           View Highscores
         </a>
+        <!-- Below is the timer. Id is used in the js to manipulate this element -->
         <div id="timer" style="float: right">Timer: 60</div>
       </header>
     </div>
     <br />
     <br />
     <br />
+    <!-- this heading and the p tag below will dissaper at the start of the quiz -->
     <h3 id="questionText" style="text-align: center">Coding Quiz Challenge</h3>
     <br />
     <p
@@ -43,6 +47,7 @@
     </p>
     <div style="text-align: center">
       <div>
+          <!-- the following start button will also be removed at the start of the quiz -->
         <button
           id="startButton"
           class="btn btn-sm"
@@ -56,6 +61,7 @@
         </button>
       </div>
       <div>
+          <!-- Below are the four buttons that will represent the four possible answers for each question the the quiz. they are initially hidden. -->
         <button
           id="btn1"
           class="btn btn-sm answerButton"

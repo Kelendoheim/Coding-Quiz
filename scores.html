@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
+        <!-- basic html to display a congrats message and the score of the user. -->
         <h1 style="text-align: center">Congratulations!</h1>
         <p id="scoreDisplay" style="text-align: center"></p>
         <form class="form-group" id="userId">
@@ -27,6 +28,7 @@
         <script>
             var userInput = document.getElementById("inputInfo");
             document.getElementById("scoreDisplay").innerHTML = "Your final score is " + window.localStorage.getItem('finalScore') + " points!";
+            // this event listener will populate the ul element with the given user id as well as the score.
             document.getElementById("userId").addEventListener("submit", function(event){
                 event.preventDefault();
                 console.log(userInput.value);
